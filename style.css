@@ -1,0 +1,89 @@
+/* Imports & supports */
+@import url("https://rsms.me/inter/inter-ui.css");
+/* Reset & Base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+  margin: 0;
+}
+body {
+  line-height: 1.5;
+  min-height: 100vh;
+}
+ul {
+  margin: 0;
+  padding-inline: 0;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* 2. Vamos a crear 3 animaciones distintas, 1 para animar el background del banner, otra para animar el título y la tercera para animar el parrafo */
+.banner {
+  height: 60vh;
+  background-color: rgb(15, 131, 115);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 500ms ease-in;
+}
+
+.banner:hover {
+  opacity: 0.7;
+}
+
+.banner h1 {
+  font-size: 70px;
+  font-family: didot;
+  background-color: aqua;
+  background-size: cover;
+  animation: intro 3000ms infinite;
+}
+
+@keyframes intro {
+  0% {
+    opacity: 0;
+    transform: translateY(400px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.banner p {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  padding: 10px 40px;
+}
